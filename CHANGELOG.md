@@ -88,15 +88,21 @@
 * Her Jynx now knows Psychic instead of Double slap.
 * She now has a Starmie with Blizzard, Surf, Psychic and Thunderbolt.
 
+* In her rematch, she gets Cloyster, Dewgong, Piloswine, Walrein, Jynx and Lapras.
+
 ### Bruno
 * Now leads with a Poliwrath. It knows Rock tomb, Earthquake, Brick break and Bulk up.
 * Now has a Primeape instead of his first Onix. This Primeape knows Substitute, Focus punch, Focus energy and Double team.
 * Now has a Tauros instead of his second Onix. This Tauros knowws Thrash, Earthquake, Scary face and Pursuit.
 
+* In his rematch, he gets Hariyama, Heracross, Blaziken, Hitmontop, Medicham and Machamp.
+
 ### Agatha
 * Now leads with a Ninetales. It knows Will-o-wisp, Confuse ray, Safeguard and Shadow ball.
 * Now has a Marowak instead of a Golbat. This Marowak knows Bone Rush, Thrash, Toxic and Protect.
 * Now has a Hypno instead of her Haunter. This Hypno knows Hypnosis, Dream eater, Disable and Nightmare.
+
+* In her rematch, she gets Ninetales, Marowak, Misdreavus, Dusclops, Hypno and Gengar.
 
 ### Lance
 * Now leads with a Lapras. It knows Perish song, Ice beam, Surf and Rest. It holds a Chesto berry.
@@ -106,6 +112,7 @@
 * His Aerodactyl now holds a Hard stone.
 * His Dragonite now knows Thunder wave instead of Safeguard. It now holds Leftovers.
 
+* In his rematch, he gets Gyarados, Ampharos, Charizard, Kingdra, Aerodactyl and Dragonite.
 ### Blue
 * His Pidgeot now knows Double edge instead of Whirlwind. It now holds a Sitrus berry.
 * His Alakazam now knows Calm mind instead of Future sight. It now holds a Twisted spoon.
@@ -116,3 +123,8 @@
 * His Blastoise now knows Surf instead of Hydro pump and Ice beam instead of Bite.
 * His Venusaur now knows Sludge bomb instead of Synthesis.
 * His Charizard now knows Flamethrower instead of Fire blast and Smokescreen instead of Fire spin.
+
+* In his rematch he gets Skarmory, Heracross, Tyranitar, Alakazam, Arcanine/Gyarados/Exeggutor and Blastoise/Venusaur/Charizard
+
+### Other trainers
+Other trainers' teams were changed to give more variety to the game. Some Pokémon were evolved and some parties were changed a bit so they don't feel like repeats all the time. More experience should be available throughout the game.
