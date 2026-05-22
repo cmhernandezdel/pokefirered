@@ -105,3 +105,14 @@
 * Now has a Rhydon instead of his second Dragonair. It knows Earthquake, Take down, Rock slide and Swords dance. It holds a Quick claw.
 * His Aerodactyl now holds a Hard stone.
 * His Dragonite now knows Thunder wave instead of Safeguard. It now holds Leftovers.
+
+### Blue
+* His Pidgeot now knows Double edge instead of Whirlwind. It now holds a Sitrus berry.
+* His Alakazam now knows Calm mind instead of Future sight. It now holds a Twisted spoon.
+* Now has a Snorlax instead of a Rhydon. This Snorlax knows Body slam, Rest, Belly drum and Shadow ball. It holds a Chesto berry.
+* His Arcanine now knows Double team instead of Roar. It now holds a King's rock.
+* His Exeggutor now holds Leftovers.
+* His Gyarados now holds a Mystic water.
+* His Blastoise now knows Surf instead of Hydro pump and Ice beam instead of Bite.
+* His Venusaur now knows Sludge bomb instead of Synthesis.
+* His Charizard now knows Flamethrower instead of Fire blast and Smokescreen instead of Fire spin.
