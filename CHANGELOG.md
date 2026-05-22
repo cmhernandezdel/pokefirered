@@ -81,4 +81,27 @@
 * His Dugtrio now knows Sandstorm instead of Sand tomb.
 * His Nidoqueen know knows Toxic instead of Poison sting and Double team instead of Double kick.
 * His Nidoking know knows Megahorn instead of Double kick and Sludge bomb instead of Poison sting.
-* Now has a Rhydon instead of his second Rhyhorn. 
+* Now has a Rhydon instead of his second Rhyhorn. It holds a Soft sand.
+
+### Lorelei
+* Now leads with her Cloyster. It knows Blizzard instead of Dive and Surf instead of Protect.
+* Her Jynx now knows Psychic instead of Double slap.
+* She now has a Starmie with Blizzard, Surf, Psychic and Thunderbolt.
+
+### Bruno
+* Now leads with a Poliwrath. It knows Rock tomb, Earthquake, Brick break and Bulk up.
+* Now has a Primeape instead of his first Onix. This Primeape knows Substitute, Focus punch, Focus energy and Double team.
+* Now has a Tauros instead of his second Onix. This Tauros knowws Thrash, Earthquake, Scary face and Pursuit.
+
+### Agatha
+* Now leads with a Ninetales. It knows Will-o-wisp, Confuse ray, Safeguard and Shadow ball.
+* Now has a Marowak instead of a Golbat. This Marowak knows Bone Rush, Thrash, Toxic and Protect.
+* Now has a Hypno instead of her Haunter. This Hypno knows Hypnosis, Dream eater, Disable and Nightmare.
+
+### Lance
+* Now leads with a Lapras. It knows Perish song, Ice beam, Surf and Rest. It holds a Chesto berry.
+* His Gyarados now knows Earthquake instead of Twister and Dragon dance instead of Bite. It holds a King's rock.
+* Now has a Charizard instead of his first Dragonair. It knows Dragon rage, Overheat, Sunny day and Wing attack. It holds a White herb.
+* Now has a Rhydon instead of his second Dragonair. It knows Earthquake, Take down, Rock slide and Swords dance. It holds a Quick claw.
+* His Aerodactyl now holds a Hard stone.
+* His Dragonite now knows Thunder wave instead of Safeguard. It now holds Leftovers.
