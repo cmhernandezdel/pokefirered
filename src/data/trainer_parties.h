@@ -4135,7 +4135,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BossGiovanni2[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderGiovanni[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderGiovanni[] = {
     {
         .iv = 0,
         .lvl = 45,
@@ -4171,7 +4171,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderGiovanni[] = {
         .lvl = 50,
         .species = SPECIES_RHYDON,
         .moves = {MOVE_TAKE_DOWN, MOVE_ROCK_BLAST, MOVE_SCARY_FACE, MOVE_EARTHQUAKE},
-        .heldItem = ITEM_SOFT_SAND
+        .heldItem = ITEM_SOFT_SAND,
     },
 };
 
@@ -5632,7 +5632,7 @@ static const struct TrainerMonItemCustomMoves sParty_EliteFourLance[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderBrock[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderBrock[] = {
     {
         .iv = 0,
         .lvl = 12,
@@ -5654,7 +5654,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderBrock[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderMisty[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderMisty[] = {
     {
         .iv = 0,
         .lvl = 18,
@@ -5676,7 +5676,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderMisty[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderLtSurge[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderLtSurge[] = {
     {
         .iv = 0,
         .lvl = 21,
@@ -5704,7 +5704,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderLtSurge[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderErika[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderErika[] = {
     {
         .iv = 0,
         .lvl = 27,
@@ -5732,7 +5732,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderErika[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderKoga[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderKoga[] = {
     {
         .iv = 0,
         .lvl = 36,
@@ -5766,7 +5766,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderKoga[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderBlaine[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderBlaine[] = {
     {
         .iv = 0,
         .lvl = 42,
@@ -5800,7 +5800,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderBlaine[] = {
     },
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_LeaderSabrina[] = {
+static const struct TrainerMonItemCustomMoves sParty_LeaderSabrina[] = {
     {
         .iv = 0,
         .lvl = 36,
