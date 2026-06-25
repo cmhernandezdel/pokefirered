@@ -1076,6 +1076,10 @@ extern const u8 gText_SaveFailedCheckingBackup[];
 extern const u8 gText_BackupMemoryDamaged[];
 extern const u8 gText_SaveCompletePressA[];
 
+// exp share
+extern const u8 gText_ExpSharedEnabled[];
+extern const u8 gText_ExpSharedDisabled[];
+
 // bag
 extern const u8 gText_DepositItem[];
 
