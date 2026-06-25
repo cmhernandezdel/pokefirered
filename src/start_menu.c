@@ -49,6 +49,7 @@ enum StartMenuOption
     STARTMENU_EXIT,
     STARTMENU_RETIRE,
     STARTMENU_PLAYER2,
+    STARTMENU_EXPSHARE,
     MAX_STARTMENU_ITEMS
 };
 
@@ -114,16 +115,17 @@ static void CloseSaveStatsWindow(void);
 static void CloseStartMenu(void);
 
 static const struct MenuAction sStartMenuActionTable[] = {
-    [STARTMENU_POKEDEX] = { gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback} },
-    [STARTMENU_POKEMON] = { gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback} },
-    [STARTMENU_BAG]     = { gText_MenuBag,     {.u8_void = StartMenuBagCallback} },
-    [STARTMENU_PLAYER]  = { gText_MenuPlayer,  {.u8_void = StartMenuPlayerCallback} },
-    [STARTMENU_SAVE]    = { gText_MenuSave,    {.u8_void = StartMenuSaveCallback} },
-    [STARTMENU_OPTION]  = { gText_MenuOption,  {.u8_void = StartMenuOptionCallback} },
-    [STARTMENU_EXIT]    = { gText_MenuExit,    {.u8_void = StartMenuExitCallback} },
-    [STARTMENU_RETIRE]  = { gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback} },
-    [STARTMENU_PLAYER2] = { gText_MenuPlayer,  {.u8_void = StartMenuLinkPlayerCallback} }
-};
+    [STARTMENU_EXPSHARE]    = { gText_MenuExpShare, {.u8_void = StartMenuExpShareCallback } },
+    [STARTMENU_POKEDEX]     = { gText_MenuPokedex,  {.u8_void = StartMenuPokedexCallback} },
+    [STARTMENU_POKEMON]     = { gText_MenuPokemon,  {.u8_void = StartMenuPokemonCallback} },
+    [STARTMENU_BAG]         = { gText_MenuBag,      {.u8_void = StartMenuBagCallback} },
+    [STARTMENU_PLAYER]      = { gText_MenuPlayer,   {.u8_void = StartMenuPlayerCallback} },
+    [STARTMENU_SAVE]        = { gText_MenuSave,     {.u8_void = StartMenuSaveCallback} },
+    [STARTMENU_OPTION]      = { gText_MenuOption,   {.u8_void = StartMenuOptionCallback} },
+    [STARTMENU_EXIT]        = { gText_MenuExit,     {.u8_void = StartMenuExitCallback} },
+    [STARTMENU_RETIRE]      = { gText_MenuRetire,   {.u8_void = StartMenuSafariZoneRetireCallback} },
+    [STARTMENU_PLAYER2]     = { gText_MenuPlayer,   {.u8_void = StartMenuLinkPlayerCallback} }
+};  
 
 static const struct WindowTemplate sSafariZoneStatsWindowTemplate = {
     .bg = 0,
@@ -144,7 +146,8 @@ static const u8 *const sStartMenuDescPointers[] = {
     gStartMenuDesc_Option,
     gStartMenuDesc_Exit,
     gStartMenuDesc_Retire,
-    gStartMenuDesc_Player
+    gStartMenuDesc_Player,
+    gStartMenuDesc_ExpShare
 };
 
 static const struct BgTemplate sBGTemplates_AfterLinkSaveMessage[] = {
@@ -214,8 +217,10 @@ static void SetUpStartMenu_NormalField(void)
 {
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AppendToStartMenuItems(STARTMENU_POKEDEX);
-    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
         AppendToStartMenuItems(STARTMENU_POKEMON);
+        AppendToStartMenuItems(STARTMENU)
+    }
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
     AppendToStartMenuItems(STARTMENU_SAVE);
@@ -448,6 +453,7 @@ static void StartMenu_FadeScreenIfLeavingOverworld(void)
 {
     if (sStartMenuCallback != StartMenuSaveCallback
      && sStartMenuCallback != StartMenuExitCallback
+     && sStartMenuCallback != StartMenuExpShareCallback
      && sStartMenuCallback != StartMenuSafariZoneRetireCallback)
     {
         StopPokemonLeagueLightingEffectTask();
@@ -518,6 +524,14 @@ static bool8 StartMenuPlayerCallback(void)
 static bool8 StartMenuSaveCallback(void)
 {
     sStartMenuCallback = StartCB_Save1;
+    return FALSE;
+}
+
+static bool8 StartMenuExpShareCallback(void)
+{
+    ClearDialogWindowAndFrameToTransparent(0, FALSE);
+    DrawStartMenuInOneGo();
+    sStartMenuCallback = StartCB_HandleInput;
     return FALSE;
 }
 
