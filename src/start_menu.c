@@ -80,6 +80,7 @@ static void SetUpStartMenu_NormalField(void);
 static bool8 StartCB_HandleInput(void);
 static void StartMenu_FadeScreenIfLeavingOverworld(void);
 static bool8 StartMenuPokedexSanityCheck(void);
+static bool8 StartMenuExpShareCallback(void);
 static bool8 StartMenuPokedexCallback(void);
 static bool8 StartMenuPokemonCallback(void);
 static bool8 StartMenuBagCallback(void);
@@ -108,6 +109,8 @@ static u8 SaveDialogCB_WaitPrintSuccessAndPlaySE(void);
 static u8 SaveDialogCB_ReturnSuccess(void);
 static u8 SaveDialogCB_WaitPrintErrorAndPlaySE(void);
 static u8 SaveDialogCB_ReturnError(void);
+static u8 ExpShareCB_PrintText(void);
+static u8 ExpShareCB_Confirm(void);
 static void CB2_WhileSavingAfterLinkBattle(void);
 static void task50_after_link_battle_save(u8 taskId);
 static void PrintSaveStats(void);
@@ -219,7 +222,7 @@ static void SetUpStartMenu_NormalField(void)
         AppendToStartMenuItems(STARTMENU_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) {
         AppendToStartMenuItems(STARTMENU_POKEMON);
-        AppendToStartMenuItems(STARTMENU)
+        AppendToStartMenuItems(STARTMENU_EXPSHARE);
     }
     AppendToStartMenuItems(STARTMENU_BAG);
     AppendToStartMenuItems(STARTMENU_PLAYER);
@@ -529,9 +532,32 @@ static bool8 StartMenuSaveCallback(void)
 
 static bool8 StartMenuExpShareCallback(void)
 {
-    ClearDialogWindowAndFrameToTransparent(0, FALSE);
-    DrawStartMenuInOneGo();
-    sStartMenuCallback = StartCB_HandleInput;
+    sStartMenuCallback = ExpShareCB_PrintText;
+    return FALSE; // if i put true here it freezes
+}
+
+static u8 ExpShareCB_PrintText(void)
+{
+    ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);   // hide start menu
+    LoadMessageBoxAndFrameGfx(0, TRUE); // create box
+    // add text
+    StringExpandPlaceholders(gStringVar4, gText_ExpSharedEnabled);
+    AddTextPrinterForMessage(TRUE);
+    
+    sStartMenuCallback = ExpShareCB_Confirm;
+    return FALSE;
+}
+
+static u8 ExpShareCB_Confirm(void) 
+{
+    if (!RunTextPrinters_CheckPrinter0Active()) {
+        ClearDialogWindowAndFrame(0, TRUE);
+        ClearPlayerHeldMovementAndUnfreezeObjectEvents();
+        UnlockPlayerFieldControls();
+        RestoreHelpContext();
+        return TRUE;
+    }
+    
     return FALSE;
 }
 
