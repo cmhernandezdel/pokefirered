@@ -111,6 +111,7 @@ static u8 SaveDialogCB_WaitPrintErrorAndPlaySE(void);
 static u8 SaveDialogCB_ReturnError(void);
 static u8 ExpShareCB_PrintText(void);
 static u8 ExpShareCB_Confirm(void);
+static void SwitchGlobalExpShare(void);
 static void CB2_WhileSavingAfterLinkBattle(void);
 static void task50_after_link_battle_save(u8 taskId);
 static void PrintSaveStats(void);
@@ -540,8 +541,14 @@ static u8 ExpShareCB_PrintText(void)
 {
     ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);   // hide start menu
     LoadMessageBoxAndFrameGfx(0, TRUE); // create box
-    // add text
-    StringExpandPlaceholders(gStringVar4, gText_ExpSharedEnabled);
+
+    // add text depending on whether exp share is enabled or disabled
+    if (FlagGet(FLAG_GLOBAL_EXP_SHARE_ENABLED)) {
+        StringExpandPlaceholders(gStringVar4, gText_ExpSharedDisabled);
+    } else {
+        StringExpandPlaceholders(gStringVar4, gText_ExpSharedEnabled);
+    }
+
     AddTextPrinterForMessage(TRUE);
     
     sStartMenuCallback = ExpShareCB_Confirm;
@@ -555,10 +562,20 @@ static u8 ExpShareCB_Confirm(void)
         ClearPlayerHeldMovementAndUnfreezeObjectEvents();
         UnlockPlayerFieldControls();
         RestoreHelpContext();
+        SwitchGlobalExpShare();
         return TRUE;
     }
     
     return FALSE;
+}
+
+static void SwitchGlobalExpShare(void)
+{
+    if (FlagGet(FLAG_GLOBAL_EXP_SHARE_ENABLED)) {
+        FlagClear(FLAG_GLOBAL_EXP_SHARE_ENABLED);
+    } else {
+        FlagSet(FLAG_GLOBAL_EXP_SHARE_ENABLED);
+    }
 }
 
 static bool8 StartMenuOptionCallback(void)
