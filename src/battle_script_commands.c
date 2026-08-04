@@ -3167,11 +3167,18 @@ static void Cmd_getexp(void)
 
             if (viaExpShare) // at least one mon is getting exp via exp share
             {
-                *exp = SAFE_DIV(calculatedExp / 2, viaSentIn);
-                if (*exp == 0)
-                    *exp = 1;
+                if (FlagGet(FLAG_GLOBAL_EXP_SHARE_ENABLED) == TRUE) 
+                {
+                    *exp = 0; // global: equally distribute among all mons
+                }
+                else 
+                {
+                    *exp = SAFE_DIV(calculatedExp, viaExpShare);
+                    if (*exp == 0)
+                        *exp = 1;
+                }
 
-                gExpShareExp = calculatedExp / 2 / viaExpShare;
+                gExpShareExp = calculatedExp / viaExpShare;
                 if (gExpShareExp == 0)
                     gExpShareExp = 1;
             }
